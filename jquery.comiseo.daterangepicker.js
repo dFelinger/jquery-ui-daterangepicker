@@ -54,6 +54,12 @@
 				numberOfMonths: 3,
 //				showCurrentAtPos: 1 // bug; use maxDate instead
 				maxDate: 0 // the maximum selectable date is today (also current month is displayed on the last position)
+			},
+			position: {
+				my: 'left top',
+				at: 'left bottom',
+				of: null,
+				collision: 'flipfit flipfit'
 			}
 		},
 
@@ -426,6 +432,9 @@
 					reset();
 				}
 			});
+
+			options.position.of = options.position.of || triggerButton.getElement();
+
 			render();
 			autoFit();
 			reset();
@@ -572,10 +581,10 @@
 		// adjusts dropdown's position taking into account the available space
 		function reposition() {
 			$container.position({
-				my: 'left top',
-				at: 'left bottom' + (options.verticalOffset < 0 ? options.verticalOffset : '+' + options.verticalOffset),
-				of: triggerButton.getElement(),
-				collision : 'flipfit flipfit',
+				my: options.position.my,
+				at: options.position.at,
+				of: options.position.of,
+				collision: options.position.collision,
 				using: function(coords, feedback) {
 					var containerCenterX = feedback.element.left + feedback.element.width / 2,
 						triggerButtonCenterX = feedback.target.left + feedback.target.width / 2,
