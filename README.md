@@ -6,6 +6,22 @@ supports multiple months, custom preset ranges and smart positioning;
 
 To get started, checkout examples and API at http://tamble.github.io/jquery-ui-daterangepicker/
 
+# What in fork
+
+Use jquery ui smart positioning option
+
+Defaults:
+```javascript
+position: {
+	my: 'left top',
+	at: 'left bottom',
+	of: null,
+	collision: 'flipfit flipfit'
+}
+```
+
+http://api.jqueryui.com/position/
+
 ## Dependencies
 
  - [jQuery](http://jquery.com/) 1.8.3+
